@@ -24,7 +24,7 @@ struct CountryRowView: View {
                         lat: Double(country.capitalInfo!.latlng[0]),
                         long: Double(country.capitalInfo!.latlng[1]),
                         action: self.action)
-                }.frame(alignment: .center)
+                }
             }
         }
     }

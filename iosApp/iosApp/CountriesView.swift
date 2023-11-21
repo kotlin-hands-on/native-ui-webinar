@@ -25,7 +25,7 @@ struct CountriesView: View {
             return AnyView(Text("Loading...").multilineTextAlignment(.center))
         case .result(let countries):
             return AnyView(List(countries.indices) { index in
-                CardView(isTop: index == 0, action: self.action, country: countries[index])
+                CountryRowView(isTop: index == 0, action: self.action, country: countries[index])
             })
         case .error(let description):
             return AnyView(Text(description).multilineTextAlignment(.center))

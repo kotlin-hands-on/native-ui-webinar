@@ -4,7 +4,7 @@ import Kingfisher
 import KMPNativeCoroutinesCore
 import KMPNativeCoroutinesAsync
 
-struct CardView: View {
+struct CountryRowView: View {
 
     @StateObject var viewModel: ViewModel = ViewModel()
 
@@ -15,21 +15,16 @@ struct CardView: View {
     @State var country: Country
 
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 25, style: .continuous)
-                .fill(isTop ? .gray : .white)
-                .shadow(radius: 10)
-            VStack {
-                CountryDetailsView(country: country)
+        VStack {
+            CountryDetailsView(country: country)
 
-                ForEach(country.capital, id: \.self) { capital in
-                    Button("\(capital) weather") {
-                        viewModel.loadWeather(capitalName: capital,
-                            lat: Double(country.capitalInfo!.latlng[0]),
-                            long: Double(country.capitalInfo!.latlng[1]),
-                            action: self.action)
-                    }.frame(maxWidth: .infinity, alignment: .center)
-                }
+            ForEach(country.capital, id: \.self) { capital in
+                Button("\(capital) weather") {
+                    viewModel.loadWeather(capitalName: capital,
+                        lat: Double(country.capitalInfo!.latlng[0]),
+                        long: Double(country.capitalInfo!.latlng[1]),
+                        action: self.action)
+                }.frame(alignment: .center)
             }
         }
     }

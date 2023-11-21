@@ -1,4 +1,4 @@
-rootProject.name = "WebinarProject"
+rootProject.name = "native-ui-webinar"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {

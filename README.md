@@ -5,7 +5,7 @@
 
 This repository contains a sample application, used in the second of four webinars on Kotlin Multiplatform.
 
-The slides for the webinar can be found in the **docs** folder, and provide detailed information on the structure of the project and how it can be run.
+The slides for the webinar can be found in the **slides** folder, and provide detailed information on the structure of the project and how it can be run.
 
 Before you can build the application you will need to sign up for a key with the [Weather API](https://openweathermap.org/api), and add this in your **local.properties** file. The steps to do this are as follows:
 

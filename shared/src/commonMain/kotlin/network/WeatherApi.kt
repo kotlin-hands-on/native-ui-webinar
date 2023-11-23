@@ -38,18 +38,4 @@ class WeatherApi() {
         return httpClient.get("https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${Config.WeatherApiKey}&units=metric")
             .body()
     }
-
-    private val clockTime = flow<String> {
-        while(true) {
-            emit(formatTime(Clock.System.now()))
-            delay(1.seconds)
-        }
-    }
-
-    val actualTime = clockTime.stateIn(GlobalScope, SharingStarted.Eagerly, "N/A")
-
-    private fun formatTime(time: Instant): String {
-        val localDateTime = time.toLocalDateTime(TimeZone.UTC)
-        return "${localDateTime.hour}:${localDateTime.minute}:${localDateTime.second}"
-    }
 }
